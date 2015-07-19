@@ -1,11 +1,11 @@
 # flairlog
-Collect and collate user flair from subreddits
+Collect and collate user flair from subreddits.
 
 ## Setup
 Fill in the relevant information for your PRAW user-agent, reddit username, and reddit user account password into a configuration file called `Config.py`. An example file is given.
 
-## Setting your subreddit
-Whatever subreddit you intend to mine flairs from, make sure your account is an active moderator of the subreddit. The option to select the subreddit name is also in `Config.py`.
+### Setting your subreddit
+Whatever subreddit you intend to mine flairs from, make sure your account is an active moderator of the subreddit. The subreddit name parameter should be set in `Config.py`.
 
 ## Flair Categories
 Fill in content into `Dictionary.py` in order to "translate" a flair into a category title, which can be used to collect users into similar flair categories.
@@ -14,3 +14,12 @@ Fill in content into `Dictionary.py` in order to "translate" a flair into a cate
 No command line arguments, no parameters, no other files.
 
 Just type `python flairs.py`
+
+#### On a Mac
+
+To speed-up the process of uploading a flairlog to a subreddit wiki:
+
+    $> python flairs.py > output.md
+    $> pbcopy < output.md
+
+Then navigate to your subreddit's wiki page and press <kbd>⌘</kbd><kbd>V</kbd> to paste the flairlog into the wiki textbox.
