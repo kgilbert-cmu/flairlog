@@ -1,21 +1,30 @@
 import Config
+import Dictionary
 import praw
 
 def main():
 	r = praw.Reddit(user_agent = Config.user_agent)
 	r.login(Config.username, Config.password)
 	subreddit = r.get_subreddit(Config.subreddit)
-	people = []
+	collect = {}
 	for flair in subreddit.get_flair_list(limit = None):
 		(_, user, text) = flair.values()
-		if "'" in text:
-			text = text[:text.index("'")]
-		if "(" in text:
-			text = text[:text.index("(")]
-		if "-" in text:
-			text = text[:text.index("-")]
+		# flair pre-processing
+		postfix = ["'", "(", "-"]
+		for char in postfix:
+			if char in text:
+				text = text[:text.index(char)]
 		text = text.strip().lower()
-		print user, "(" + text + ")"
+		if text in Dictionary.translate:
+			college = Dictionary.translate[text]
+		else:
+			college = "{ Flair not set }"
+		if college in collect:
+			collect[college].append(user)
+		else:
+			collect[college] = ['/u/' + user]
+	for college in sorted(collect):
+		print "\n#", college, "\n\t*", "\n\t* ".join(collect[college])
 
 def die():
 	sys.exit(1)
