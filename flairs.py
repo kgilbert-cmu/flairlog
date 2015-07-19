@@ -6,7 +6,7 @@ def main():
 	r.login(Config.username, Config.password)
 	subreddit = r.get_subreddit(Config.subreddit)
 	people = []
-	for flair in subreddit.get_flair_list():
+	for flair in subreddit.get_flair_list(limit = None):
 		(_, user, text) = flair.values()
 		if "'" in text:
 			text = text[:text.index("'")]
