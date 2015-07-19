@@ -10,12 +10,10 @@ def main():
 	for flair in subreddit.get_flair_list():
 		(_, user, text) = flair.values()
 		# flair pre-processing
-		if "'" in text:
-			text = text[:text.index("'")]
-		if "(" in text:
-			text = text[:text.index("(")]
-		if "-" in text:
-			text = text[:text.index("-")]
+		postfix = ["'", "(", "-"]
+		for char in postfix:
+			if char in text:
+				text = text[:text.index(char)]
 		text = text.strip().lower()
 		if text in Dictionary.translate:
 			college = Dictionary.translate[text]
