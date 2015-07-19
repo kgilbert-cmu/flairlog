@@ -1,0 +1,6 @@
+user_agent = "/u/reddit_username i am a bot"
+subreddit = "redditdev"
+
+# a future major release of PRAW will deprecate user/pass login
+username = "reddit_username"
+password = "reddit_password"
