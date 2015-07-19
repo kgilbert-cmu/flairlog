@@ -24,7 +24,7 @@ def main():
 		else:
 			collect[college] = ['/u/' + user]
 	for college in sorted(collect):
-		print "\n#", college, "\n\t*", "\n\t* ".join(collect[college])
+		print "###", college, "\n*", "\n* ".join(collect[college]), "\n"
 
 def die():
 	sys.exit(1)
