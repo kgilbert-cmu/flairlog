@@ -1,4 +1,5 @@
 import Config
+import Dictionary
 import praw
 
 def main():
@@ -8,6 +9,7 @@ def main():
 	people = []
 	for flair in subreddit.get_flair_list():
 		(_, user, text) = flair.values()
+		# flair pre-processing
 		if "'" in text:
 			text = text[:text.index("'")]
 		if "(" in text:
@@ -15,7 +17,11 @@ def main():
 		if "-" in text:
 			text = text[:text.index("-")]
 		text = text.strip().lower()
-		print user, "(" + text + ")"
+		if text in Dictionary.translate:
+			college = Dictionary.translate[text]
+		else:
+			college = text
+		print user, "(" + college + ")"
 
 def die():
 	sys.exit(1)

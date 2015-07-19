@@ -1,4 +1,4 @@
-chapters = {
+translate = {
 	#==Undergraduate Chapters in the United States==
 
 	#===Alabama===
