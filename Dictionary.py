@@ -58,7 +58,7 @@ translate = {
 	"gamma omega" : "University of Connecticut",
 	"theta upsilon" : "Yale University",
 	"iota eta" : "Western Connecticut State University",
-	"lambda epsilon" : " University of New Haven",
+	"lambda epsilon" : "University of New Haven",
 
 	#===Delaware===
 	"kappa epsilon" : "University of Delaware",
@@ -363,7 +363,7 @@ translate = {
 	"alpha lambda" : "University of Wisconsin-Madison",
 	"epsilon lambda" : "Ripon College (Wisconsin)",
 	"iota pi" : "Marquette University",
-	"lambda chi" : " University of Wisconsin-Milwaukee",
+	"lambda chi" : "University of Wisconsin-Milwaukee",
 
 	#===Wyoming===
 	"gamma xi" : "University of Wyoming",
