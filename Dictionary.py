@@ -108,7 +108,7 @@ translate = {
 	"theta rho" : "Illinois State University",
 	"iota omicron" : "Western Illinois University",
 	"kappa kappa" : "University of Illinois at Urbana-Champaign",
-	"omicronomicron" : "University of Chicago",
+	"omicron omicron" : "University of Chicago",
 	"lambda alpha" : "Knox College",
 	"lambda nu" : "Loyola University Chicago",
 	"lambda omicron" : "Southern Illinois University-Carbondale",
@@ -191,8 +191,8 @@ translate = {
 	"eta kappa" : "Missouri State University",
 	"theta eta" : "Missouri University of Science and Technology",
 	"theta iota" : "St. Louis University",
-	"xixi" : "University of Missouri",
-	"tautau" : "Washington University in St. Louis",
+	"xi xi" : "University of Missouri",
+	"tau tau" : "Washington University in St. Louis",
 
 	#===Montana===
 	"beta delta" : "University of Montana",
@@ -230,13 +230,13 @@ translate = {
 	"iota delta" : "State University of New York at Albany",
 	"iota zeta" : "Clarkson University",
 	"kappa nu" : "State University of New York at Oswego",
-	"nunu" : "Columbia University",
-	"psipsi" : "Syracuse University",
+	"nu nu" : "Columbia University",
+	"psi psi" : "Syracuse University",
 	"lambda kappa" : "Rochester Institute of Technology",
 
 	#===North Carolina===
 	"alpha tau" : "University of North Carolina at Chapel Hill",
-	"alpha -colony" : " University of North Carolina at Charlotte",
+	"mu alpha" : " University of North Carolina at Charlotte",
 	"beta lambda" : "Duke University",
 	"delta epsilon" : "North Carolina State University",
 	"delta lambda" : "Davidson College",
@@ -285,7 +285,7 @@ translate = {
 	"eta omicron" : "Indiana University of Pennsylvania",
 	"theta alpha" : "Clarion University of Pennsylvania",
 	"kappa chi" : "Villanova University",
-	"phiphi" : "University of Pennsylvania",
+	"phi phi" : "University of Pennsylvania",
 	"lambda pi" : "Carnegie Mellon University",
 	"lambda rho" : "Saint Francis University",
 
@@ -316,7 +316,7 @@ translate = {
 	"alpha nu" : "University of Texas at Austin",
 	"delta mu" : "Southern Methodist University",
 	"epsilon mu" : "Texas Christian University",
-	"epsilon N" : "Texas Tech University",
+	"epsilon nu" : "Texas Tech University",
 	"epsilon xi" : "University of Houston",
 	"epsilon chi" : "Lamar University",
 	"epsilon psi" : "Sam Houston State University",
@@ -347,16 +347,16 @@ translate = {
 	"iota beta" : "James Madison University",
 	"iota xi" : "George Mason University",
 	"kappa zeta" : "Radford University",
-	"sigmasigma" : "Hampden-Sydney College",
+	"sigma sigma" : "Hampden-Sydney College",
 
 	#===Washington===
 	"beta upsilon" : "Washington State University",
 	"gamma epsilon" : "Whitman College",
 	"delta phi" : "University of Puget Sound",
-	"upsilonupsilon" : "University of Washington",
+	"upsilon upsilon" : "University of Washington",
 
 	#===West Virginia===
-	"mumu" : "West Virginia University",
+	"mu mu" : "West Virginia University",
 
 	#===Wisconsin===
 	"alpha zeta" : "Beloit College",
@@ -368,8 +368,9 @@ translate = {
 	#===Wyoming===
 	"gamma xi" : "University of Wyoming",
 
-	#==Undergraduate Chapters in Canada==
 
+	#==Undergraduate Chapters in Canada==
+	
 	#===British Columbia===
 	"delta omicron" : "University of British Columbia",
 
