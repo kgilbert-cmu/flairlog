@@ -20,7 +20,7 @@ def main():
 		else:
 			college = "{ Flair not set }"
 		if college in collect:
-			collect[college].append(user)
+			collect[college].append('/u/' + user)
 		else:
 			collect[college] = ['/u/' + user]
 	for college in sorted(collect):
