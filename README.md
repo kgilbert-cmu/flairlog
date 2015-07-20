@@ -23,3 +23,7 @@ To speed-up the process of uploading a flairlog to a subreddit wiki:
     $> pbcopy < output.md
 
 Then navigate to your subreddit's wiki page and press <kbd>⌘</kbd><kbd>V</kbd> to paste the flairlog into the wiki textbox.
+
+## Special Thanks
+
+In honored memory of our dearly beloved brother Vinay Balaji (Carnegie Mellon '14), we will forever miss your smile and your spirit.
