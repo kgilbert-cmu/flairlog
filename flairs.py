@@ -11,6 +11,8 @@ def main():
 		(_, user, text) = flair.values()
 		cleaned = text
 		# flair pre-processing
+		if cleaned.count(" ") >= 2:
+			cleaned = " ".join(cleaned.split(" ")[0:2])
 		postfix = ["'", "(", "-"]
 		for char in postfix:
 			if char in cleaned:
