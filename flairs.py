@@ -9,16 +9,20 @@ def main():
 	collect = {}
 	for flair in subreddit.get_flair_list(limit = None):
 		(_, user, text) = flair.values()
+		cleaned = text
 		# flair pre-processing
 		postfix = ["'", "(", "-"]
 		for char in postfix:
-			if char in text:
-				text = text[:text.index(char)]
-		text = text.strip().lower()
-		if text in Dictionary.translate:
-			college = Dictionary.translate[text]
-		else:
+			if char in cleaned:
+				cleaned = cleaned[:cleaned.index(char)]
+		cleaned = cleaned.strip().lower()
+		if cleaned in Dictionary.translate:
+			college = Dictionary.translate[cleaned]
+		elif cleaned == "":
 			college = "{ Flair not set }"
+		else:
+			college = "{ Flair not recognized }"
+			user = user + ' (' + (cleaned).encode('ascii', 'replace') + ')'
 		if college in collect:
 			collect[college].append('/u/' + user)
 		else:
