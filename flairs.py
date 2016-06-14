@@ -2,6 +2,7 @@ import Config
 import Dictionary
 import praw
 
+
 def main():
 	r = praw.Reddit(user_agent = Config.user_agent)
 	r.login(Config.username, Config.password)
@@ -30,10 +31,42 @@ def main():
 		else:
 			collect[college] = ['/u/' + user]
 	for college in sorted(collect):
-		print "###", college, "\n*", "\n* ".join(collect[college]), "\n"
+		print "###", link(college), "\n*", "\n* ".join(collect[college]), "\n"
+
+
 
 def die():
 	sys.exit(1)
+
+
+def link(college):
+	if '{' in college:
+		return college
+	html = clean(college)
+	fof = "https://www.facebook.com/search/top/?q=friends%20of%20my%20friends%20who%20go%20to%20{}%20and%20like%20Sigma%20Chi%20Fraternity"
+	return "[{}]({})".format(college, fof.format(html))
+
+
+def clean(text):
+	array = list(text)
+	cleaned = []
+	while len(array) > 0:
+		char = array.pop(0)
+		if char == " ":
+			cleaned.append("%20")
+		elif char == "(" or char == "[":
+			counter = 1
+			char = array.pop(0)
+			while len(array) > 0 and counter >= 1:
+				if char == "(" or char == "[":
+					counter += 1
+				elif char == ")" or char == "]":
+					counter -= 1
+				char = array.pop(0)
+		else:
+			cleaned.append(char)
+	return "".join(cleaned)
+
 
 if __name__ == "__main__":
 	try:
@@ -41,3 +74,4 @@ if __name__ == "__main__":
 	except SystemError:
 		print "Bot was killed."
 	
+
