@@ -43,7 +43,7 @@ def link(college):
 	if '{' in college:
 		return college
 	html = clean(college)
-	fof = "https://www.facebook.com/search/top/?q=friends%20of%20my%20friends%20who%20go%20to%20{}%20and%20like%20Sigma%20Chi%20Fraternity"
+	fof = "https://www.facebook.com/search/people/?q=friends%20of%20my%20friends%20who%20are%20men%20and%20go%20to%20{}%20and%20like%20Sigma%20Chi%20Fraternity"
 	return "[{}]({})".format(college, fof.format(html))
 
 
