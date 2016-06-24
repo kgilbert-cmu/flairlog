@@ -10,9 +10,9 @@ import Dictionary
 def main():
 	"""Log into reddit, get subreddit data, print log to stdout
 	"""
-	r = praw.Reddit(user_agent=Config.user_agent)
-	r.login(Config.username, Config.password)
-	subreddit = r.get_subreddit(Config.subreddit)
+	reddit = praw.Reddit(user_agent=Config.user_agent)
+	reddit.login(Config.username, Config.password)
+	subreddit = reddit.get_subreddit(Config.subreddit)
 	collect = {}
 	for flair in subreddit.get_flair_list(limit=None):
 		(_, user, text) = flair.values()
