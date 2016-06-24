@@ -1,14 +1,20 @@
+"""This script logs into a user's reddit account, accesses
+     one of their subreddits, collects all user flair, and
+     builds a browse-able log of users grouped by flair
+"""
+import praw
 import Config
 import Dictionary
-import praw
 
 
 def main():
-	r = praw.Reddit(user_agent = Config.user_agent)
+	"""Log into reddit, get subreddit data, print log to stdout
+	"""
+	r = praw.Reddit(user_agent=Config.user_agent)
 	r.login(Config.username, Config.password)
 	subreddit = r.get_subreddit(Config.subreddit)
 	collect = {}
-	for flair in subreddit.get_flair_list(limit = None):
+	for flair in subreddit.get_flair_list(limit=None):
 		(_, user, text) = flair.values()
 		cleaned = text
 		# flair pre-processing
@@ -34,12 +40,11 @@ def main():
 		print "###", link(college), "\n*", "\n* ".join(collect[college]), "\n"
 
 
-
-def die():
-	sys.exit(1)
-
-
 def link(college):
+	"""string -> string
+	    Sigma Chi customization: convert headers into FB links
+	    Users can click on the name of a school to find friends
+	"""
 	if '{' in college:
 		return college
 	html = clean(college)
@@ -48,6 +53,9 @@ def link(college):
 
 
 def clean(text):
+	"""string -> string
+	    remove non-compliant HTML text from school strings
+	"""
 	array = list(text)
 	cleaned = []
 	while len(array) > 0:
@@ -73,5 +81,4 @@ if __name__ == "__main__":
 		main()
 	except SystemError:
 		print "Bot was killed."
-	
 
